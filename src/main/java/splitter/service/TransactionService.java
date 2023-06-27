@@ -2,12 +2,12 @@ package splitter.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import splitter.model.Debt;
 import splitter.model.Transaction;
 import splitter.model.User;
 import splitter.repository.TransactionRepository;
 
-import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -39,6 +39,7 @@ public class TransactionService {
 
     /**
      * Creates a new transaction.
+     *
      * @param transaction the transaction to create.
      * @return the created transaction.
      */
@@ -48,6 +49,7 @@ public class TransactionService {
 
     /**
      * Deletes transactions before a given date.
+     *
      * @param date the date to delete transactions before.
      * @return the number of transactions deleted.
      */
